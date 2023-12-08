@@ -54,3 +54,21 @@ export const splitArray = (array, chunkSize) => {
   }
   return chunks;
 };
+
+Array.prototype.multiplyAllItems = function () {
+  const givenArray = this;
+  let result = 1;
+  for (let i = 0; i < givenArray.length; i++) {
+    result *= givenArray[i];
+  }
+  return result;
+};
+
+Array.prototype.addAllItems = function () {
+  const givenArray = this;
+  let result = 0;
+  for (let i = 0; i < givenArray.length; i++) {
+    result += givenArray[i];
+  }
+  return result;
+};
