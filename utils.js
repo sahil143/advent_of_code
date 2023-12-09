@@ -55,6 +55,9 @@ export const splitArray = (array, chunkSize) => {
   return chunks;
 };
 
+/**
+ * Multiply all items in an array
+ */
 Array.prototype.multiplyAllItems = function () {
   const givenArray = this;
   let result = 1;
@@ -64,11 +67,40 @@ Array.prototype.multiplyAllItems = function () {
   return result;
 };
 
+/**
+ * Add all items in an array
+ */
 Array.prototype.addAllItems = function () {
   const givenArray = this;
   let result = 0;
   for (let i = 0; i < givenArray.length; i++) {
     result += givenArray[i];
+  }
+  return result;
+};
+
+/**
+ * [].forEach for Matrix
+ */
+Array.prototype._matrixForEach = function (callbackFn) {
+  const matrix = this;
+  for (let x = 0; x < matrix.length; x++) {
+    for (let y = 0; y < matrix[x].length; y++) {
+      callbackFn(matrix[x][y], x, y, matrix);
+    }
+  }
+};
+
+/**
+ * [].map for Matrix
+ */
+Array.prototype._matrixMap = function (callbackFn) {
+  let result = [...this];
+  const matrix = this;
+  for (let x = 0; x < matrix.length; x++) {
+    for (let y = 0; y < matrix[x].length; y++) {
+      result[x][y] = callbackFn(matrix[x][y], [x, y], matrix);
+    }
   }
   return result;
 };
