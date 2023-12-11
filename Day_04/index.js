@@ -59,16 +59,14 @@ export const sumOfNumberOfCardCopies = () => {
     for (let i = 1; i <= numberOfMatches; i++) {
       cardCopies[cardNumber + i] = cardCopies[cardNumber + i]
         ? cardCopies[cardNumber + i] + cardCopies[cardNumber]
-        : 1;
+        : cardCopies[cardNumber];
     }
   });
 
   rl.on("close", () => {
     console.log(
-      "Part two: Sum of number of copies of each card ",
+      "Part two: Sum of number of copies of each card",
       Object.values(cardCopies).addAllItems(),
-      "\n",
-      //   cardCopies,
     );
   });
 };
