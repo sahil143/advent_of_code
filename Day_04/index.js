@@ -46,7 +46,6 @@ export const sumOfNumberOfCardCopies = () => {
   rl.on("line", (input) => {
     const { cardNumber, cards } = getCardData(input);
     const [winningNumber, numbers] = cards;
-    console.log(winningNumber, numbers);
     const numberOfMatches = numbers.reduce((acc, val) => {
       if (winningNumber.includes(val)) {
         acc += 1;
