@@ -11,6 +11,8 @@ import {
   getWaysToBeatRecord,
   getWaysToBeatSingleRaceRecord,
 } from "./Day_06/index.js";
+import { getTotalWinningFromCamelCard } from "./Day_07/01.js";
+import { getTotalWinningFromCamelCardWithJoker } from "./Day_07/02.js";
 
 // console.log("Day 01");
 // sumOfCalibrationValues();
@@ -30,7 +32,11 @@ import {
 // console.log("\n");
 // console.log("Day 05");
 // getLowestLocation();
+// console.log("\n");
+// console.log("Day 06");
+// getWaysToBeatRecord();
+// getWaysToBeatSingleRaceRecord();
 console.log("\n");
-console.log("Day 06");
-getWaysToBeatRecord();
-getWaysToBeatSingleRaceRecord();
+console.log("Day 07");
+getTotalWinningFromCamelCard();
+getTotalWinningFromCamelCardWithJoker();
