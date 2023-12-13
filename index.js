@@ -17,6 +17,10 @@ import {
   getNumberOfStepstoReachZZZ,
   getNumberOfStepstoReachZZZForAll,
 } from "./Day_08/index.js";
+import {
+  SumOfNextPossibleHistory,
+  SumOfPrevPossibleHistory,
+} from "./Day_09/index.js";
 
 // console.log("Day 01");
 // sumOfCalibrationValues();
@@ -44,7 +48,11 @@ import {
 // console.log("Day 07");
 // getTotalWinningFromCamelCard();
 // getTotalWinningFromCamelCardWithJoker();
+// console.log("\n");
+// console.log("Day 08");
+// getNumberOfStepstoReachZZZ();
+// getNumberOfStepstoReachZZZForAll();
 console.log("\n");
-console.log("Day 08");
-getNumberOfStepstoReachZZZ();
-getNumberOfStepstoReachZZZForAll();
+console.log("Day 09");
+SumOfNextPossibleHistory();
+SumOfPrevPossibleHistory();
