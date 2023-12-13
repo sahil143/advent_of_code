@@ -13,6 +13,10 @@ import {
 } from "./Day_06/index.js";
 import { getTotalWinningFromCamelCard } from "./Day_07/01.js";
 import { getTotalWinningFromCamelCardWithJoker } from "./Day_07/02.js";
+import {
+  getNumberOfStepstoReachZZZ,
+  getNumberOfStepstoReachZZZForAll,
+} from "./Day_08/index.js";
 
 // console.log("Day 01");
 // sumOfCalibrationValues();
@@ -36,7 +40,11 @@ import { getTotalWinningFromCamelCardWithJoker } from "./Day_07/02.js";
 // console.log("Day 06");
 // getWaysToBeatRecord();
 // getWaysToBeatSingleRaceRecord();
+// console.log("\n");
+// console.log("Day 07");
+// getTotalWinningFromCamelCard();
+// getTotalWinningFromCamelCardWithJoker();
 console.log("\n");
-console.log("Day 07");
-getTotalWinningFromCamelCard();
-getTotalWinningFromCamelCardWithJoker();
+console.log("Day 08");
+getNumberOfStepstoReachZZZ();
+getNumberOfStepstoReachZZZForAll();
