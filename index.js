@@ -21,6 +21,10 @@ import {
   SumOfNextPossibleHistory,
   SumOfPrevPossibleHistory,
 } from "./Day_09/index.js";
+import {
+  getInteriorCoordsLoopArea,
+  getNumberOfStepsLoopLoc,
+} from "./Day_10/index.js";
 
 // console.log("Day 01");
 // sumOfCalibrationValues();
@@ -52,7 +56,11 @@ import {
 // console.log("Day 08");
 // getNumberOfStepstoReachZZZ();
 // getNumberOfStepstoReachZZZForAll();
+// console.log("\n");
+// console.log("Day 09");
+// SumOfNextPossibleHistory();
+// SumOfPrevPossibleHistory();
 console.log("\n");
-console.log("Day 09");
-SumOfNextPossibleHistory();
-SumOfPrevPossibleHistory();
+console.log("Day 10");
+getNumberOfStepsLoopLoc();
+getInteriorCoordsLoopArea();

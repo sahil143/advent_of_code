@@ -86,7 +86,7 @@ Array.prototype._matrixForEach = function (callbackFn) {
   const matrix = this;
   for (let x = 0; x < matrix.length; x++) {
     for (let y = 0; y < matrix[x].length; y++) {
-      callbackFn(matrix[x][y], x, y, matrix);
+      callbackFn(matrix[x][y], [x, y], matrix);
     }
   }
 };
@@ -103,4 +103,69 @@ Array.prototype._matrixMap = function (callbackFn) {
     }
   }
   return result;
+};
+
+const elementExistInMatrix = (matrix, [x, y]) => !!(matrix[x] && matrix[x][y]);
+
+const callFnAtCoordinates = (matrix, coordinates, callbackFn) =>
+  elementExistInMatrix(matrix, coordinates) &&
+  callbackFn(matrix[coordinates[0]][coordinates[1]], coordinates, matrix);
+
+/**
+ * traverse adjacent element in matrix
+ */
+Array.prototype._matrixAdjacentCordinates = function (coordinates, callbackFn) {
+  const matrix = [...this];
+  const [x, y] = coordinates;
+  callFnAtCoordinates(matrix, [x, y - 1], callbackFn);
+  callFnAtCoordinates(matrix, [x + 1, y], callbackFn);
+  callFnAtCoordinates(matrix, [x, y + 1], callbackFn);
+  callFnAtCoordinates(matrix, [x - 1, y], callbackFn);
+};
+
+/**
+ * traverse adjacent element in matrix
+ */
+Array.prototype._matrixAllAdjacentCordinates = function (
+  coordinates,
+  callbackFn,
+) {
+  const matrix = [...this];
+  const [x, y] = coordinates;
+  callFnAtCoordinates(matrix, [x, y - 1], callbackFn);
+  callFnAtCoordinates(matrix, [x + 1, y], callbackFn);
+  callFnAtCoordinates(matrix, [x, y + 1], callbackFn);
+  callFnAtCoordinates(matrix, [x - 1, y], callbackFn);
+  callFnAtCoordinates(matrix, [x - 1, y - 1], callbackFn);
+  callFnAtCoordinates(matrix, [x + 1, y - 1], callbackFn);
+  callFnAtCoordinates(matrix, [x + 1, y + 1], callbackFn);
+  callFnAtCoordinates(matrix, [x - 1, y + 1], callbackFn);
+};
+
+/**
+ * [].reduce for matrix
+ */
+Array.prototype._matrixReduce = function (callbackFn, startValue) {
+  const matrix = [...this];
+  let accumulator =
+    startValue ?? (elementExistInMatrix(matrix, [0, 0]) && matrix[0][0]);
+  matrix._matrixForEach((val, coordinates) => {
+    accumulator = callbackFn(accumulator, val, coordinates, matrix);
+  });
+  return accumulator;
+};
+
+/**
+ * [].reduce for matrix
+ */
+Array.prototype._matrixIndexOf = function (value) {
+  const matrix = [...this];
+  for (let x = 0; x < matrix.length; x++) {
+    for (let y = 0; y < matrix[x].length; y++) {
+      if (matrix[x][y] === value) {
+        return [x, y];
+      }
+    }
+  }
+  return undefined;
 };

@@ -74,7 +74,7 @@ const checkAdjacent = (matrix, x, y) => {
 export const sumOfAllParts = () => {
   let sum = 0;
   const parts = [];
-  matrix._matrixForEach((val, x, y) => {
+  matrix._matrixForEach((val, [x, y]) => {
     if (isSymbol(val)) {
       const part = checkAdjacent(matrix, x, y);
       parts.push(...part);
@@ -91,7 +91,7 @@ const isGearSymbol = (s) => s === "*";
 export const sumOfGearPartsRatio = () => {
   let sum = 0;
   const parts = [];
-  partTwoMatrix._matrixForEach((val, x, y) => {
+  partTwoMatrix._matrixForEach((val, [x, y]) => {
     if (isGearSymbol(val)) {
       const part = checkAdjacent(partTwoMatrix, x, y);
       part && part.length === 2 && parts.push(part.multiplyAllItems());
