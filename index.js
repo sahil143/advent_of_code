@@ -25,6 +25,7 @@ import {
   getInteriorCoordsLoopArea,
   getNumberOfStepsLoopLoc,
 } from "./Day_10/index.js";
+import { getSortestPathBetweenTwoGalaxies } from "./Day_11/index.js";
 
 // console.log("Day 01");
 // sumOfCalibrationValues();
@@ -60,7 +61,11 @@ import {
 // console.log("Day 09");
 // SumOfNextPossibleHistory();
 // SumOfPrevPossibleHistory();
+// console.log("\n");
+// console.log("Day 10");
+// getNumberOfStepsLoopLoc();
+// getInteriorCoordsLoopArea();
 console.log("\n");
-console.log("Day 10");
-getNumberOfStepsLoopLoc();
-getInteriorCoordsLoopArea();
+console.log("Day 11");
+getSortestPathBetweenTwoGalaxies(2);
+getSortestPathBetweenTwoGalaxies(1000000);
