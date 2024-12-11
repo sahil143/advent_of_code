@@ -1,3 +1,3 @@
-# Advent of Code 2023
+# Advent of Code
 
-This repository contains AoC2023 solutions
+This repository contains AoC solutions
